@@ -1,0 +1,34 @@
+{
+  "slug": "my-short",
+  "title": "What Does Lucia's Text Reveal in GTA 6?",
+  "titleInstant": true,
+  "earlyOnly": true,
+  "maxShot": 4,
+  "sources": {
+    "capture": "media/replace-with-your-16x9-footage.mp4"
+  },
+  "phrases": [
+    {
+      "say": "Watch what Lucia texts Jason.",
+      "key": "TEXTS",
+      "c": "g",
+      "instant": true,
+      "shot": ["capture", 0, 0.5],
+      "titleWords": ["LUCIA'S TEXT|g"]
+    },
+    {
+      "say": "Look at the message on screen.",
+      "key": "MESSAGE",
+      "c": "g",
+      "shot": ["capture", 2.1, 0.6]
+    },
+    {
+      "say": "What would you text back?",
+      "key": "BACK",
+      "c": "g",
+      "shot": ["capture", 5, 0.42],
+      "ask": true,
+      "sub": true
+    }
+  ]
+}

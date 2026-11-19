@@ -1,0 +1,13 @@
+[shocked, fast] GTA 6 cops know what you're wearing.
+[curious] Here are the core rules before you play.
+[storytelling] Commit a crime and you get stars, like always.
+[building] But now the map shows where the cops are searching for you.
+[deadpan] And it lists what they know: your vehicle, appearance and outfit.
+[amused] There is even a quick-wear wheel for caps, shades and face wraps.
+[teasing, fast] You play two characters, and the game prompts you to follow Jason.
+[hushed] Some items temporarily extend your health, stamina and focus.
+[tense, fast] When Caseoh gets shot, the screen goes red.
+[building] Die, and the screen says wasted.
+[deadpan] After Lacy died, his cash dropped to zero, and he says his drugs vanished too.
+[amused] Asmon gets arrested and asks if it even matters.
+[direct, friendly] Would you stop for a quick outfit change, or just outrun them?

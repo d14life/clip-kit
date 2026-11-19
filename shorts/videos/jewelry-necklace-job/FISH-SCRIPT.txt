@@ -1,0 +1,10 @@
+[shocked, fast] This GTA 6 jewelry heist starts with one amethyst necklace in a safe and ends with a five star chase.
+[storytelling] A map card says Yasmani is after an amethyst necklace that is stored in a safe at Donovan Banks and Co.
+[curious] The player drives downtown in a gray sedan, then puts on a cap and a pair of aviators from the loadout menu.
+[hushed, building] Inside the store, the player points a gun at a guard and a customer, and the objective reads, "Search the safe for the Amethyst Necklace."
+[tense, fast] A safe keypad fills the screen, and the player also searches a back office and a storeroom before heading for the exit.
+[building] When the player comes out, a police officer is already at the door, and the objective changes to lose the cops.
+[tense, fast] The chase starts in a sedan, a police car with the number 672 crashes into it, and the wanted level climbs to four stars and then to five.
+[building] The player keeps swapping cars, drives through a green tunnel, and crashes through traffic on the highway.
+[tense] Finally, the player runs on foot with a duffel bag past a police truck at a Park 'n Glow, and the five stars are still on the screen.
+[direct, friendly] That is a lot of heat for one necklace, so would you have run this job, or walked away?

@@ -1,0 +1,12 @@
+/.venv/
+/node_modules/
+/out/
+/public/footage/
+/src/data/
+__pycache__/
+node_modules/
+out/
+public/footage/
+media/
+*.mp4
+!videos/outro/*.mp4

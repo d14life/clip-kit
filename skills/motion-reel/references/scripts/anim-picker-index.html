@@ -1,0 +1,446 @@
+<title>Letter Anim Picker</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#141414; --mut:#6a6a66; --card:#efefec; --card-hi:#e4e4df; --line:#d8d8d3;
+  --acc:#FC6444; --acc-fg:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121212; --fg:#f1f1ee; --mut:#9a9a94; --card:#1e1e1e; --card-hi:#2a2a2a; --line:#333;
+    --acc:#FC6444; --acc-fg:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121212; --fg:#f1f1ee; --mut:#9a9a94; --card:#1e1e1e; --card-hi:#2a2a2a; --line:#333;
+  --acc:#FC6444; --acc-fg:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+.app{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:16px;min-height:100vh;align-items:start}
+.stage{position:relative;height:calc(100vh - 32px);aspect-ratio:9/16;background:#F6F6F3;border-radius:14px;overflow:hidden;min-width:0}
+.stage canvas{display:block;width:100%;height:100%}
+.badge{position:absolute;left:14px;top:12px;color:#1a1a1a;pointer-events:none;line-height:1}
+.badge b{font-size:clamp(44px,9cqw,88px);font-weight:800;letter-spacing:-.02em;color:#FC6444;display:block}
+.badge span{display:block;margin-top:4px;font-size:clamp(14px,3.2cqw,26px);font-weight:700}
+.stage{container-type:inline-size}
+.panel{display:flex;flex-direction:column;gap:18px;max-width:560px;min-width:0}
+h1{font-size:20px;margin:0}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+label.lbl{font-size:13px;color:var(--mut);display:block;margin-bottom:6px}
+select,button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:10px;cursor:pointer}
+select{width:100%;padding:12px;font-size:16px}
+.anims{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.anims button{display:flex;align-items:center;gap:12px;padding:12px 14px;text-align:left;font-size:16px;font-weight:600}
+.anims button i{font-style:normal;font-size:34px;font-weight:800;min-width:34px;color:var(--acc)}
+.anims button.on{background:var(--acc);border-color:var(--acc);color:var(--acc-fg)}
+.anims button.on i{color:var(--acc-fg)}
+.ctl button{padding:12px 18px;font-size:16px;font-weight:600}
+.ctl button.main{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.ctl button.on{background:var(--acc);color:var(--acc-fg);border-color:var(--acc)}
+.hint{font-size:13px;color:var(--mut);margin:0}
+@media (max-width:760px){
+  .app{grid-template-columns:minmax(0,1fr);padding:16px}
+  .stage{height:auto;width:100%}
+  .anims button{padding:10px}
+}
+</style>
+<script type="importmap">
+{"imports":{
+ "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+ "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<div class="app">
+  <div class="stage" id="stage"><div class="badge"><b id="bL">C</b><span id="bN"></span></div></div>
+  <div class="panel">
+    <h1>Letter Anim Picker</h1>
+    <div><label class="lbl" for="line">Line</label><select id="line"></select></div>
+    <div><label class="lbl">Animation</label><div class="anims" id="anims"></div></div>
+    <div class="row ctl">
+      <button class="main" id="play">Replay</button>
+      <button id="voice" class="on">Voice: on</button>
+      <button id="speed">Speed 1x</button>
+    </div>
+    <p class="hint">Each cycle: entry, 1.5 s hold, exit (0.4 s), 0.5 s blank, repeat. Say it like &ldquo;line 4, C&rdquo;.</p>
+  </div>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { TTFLoader } from 'three/addons/loaders/TTFLoader.js';
+import { Font } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+
+const FPS = 30, RAD = Math.PI / 180;
+const cl = x => Math.min(1, Math.max(0, x));
+const E = {
+  outBack: x => { x = cl(x); const k = 1.70158, c = k + 1; return 1 + c * (x - 1) ** 3 + k * (x - 1) ** 2; },
+  outCubic: x => 1 - (1 - cl(x)) ** 3,
+  inCubic: x => cl(x) ** 3,
+  inQuad: x => cl(x) ** 2,
+  bounce: x => { x = cl(x); const n = 7.5625, d = 2.75;
+    if (x < 1 / d) return n * x * x;
+    if (x < 2 / d) { x -= 1.5 / d; return n * x * x + .75; }
+    if (x < 2.5 / d) { x -= 2.25 / d; return n * x * x + .9375; }
+    x -= 2.625 / d; return n * x * x + .984375; }
+};
+const hash = n => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+
+/* ---------- data ---------- */
+// Damir 11-17: yaw/tilt below are unused now (all lines straight); cy/fw re-fitted for the level camera (1 +22 px, 5 fw 820, 10 +12 px).
+// br = index of first word of row 2; fw = fit width (default 790; yawed lines need less to stay inside x 120-960); acc = accent word index (-1 none)
+const LOGO = { x0: 209, sz: 102.4, cy: 994, bar: [124, 18, 802, 1118], cz: 30, so: .24, sr: 14 };   // 13: fitted to o8-wall src 80 (scripts/tag14_logo_fit.py)
+const LINES = [
+ {n:1, yaw:0, tilt:22, br:3, acc:4, cy:777, au:'L2.wav',  w:[['Мы',.05],['делаем',.20],['сайты,',.79],['которые',1.45],['продают',2.11]]},
+ {n:2, lhr:[1.2,1.8], cy:777, yaw:-15, tilt:12, br:2, fw:830, acc:4, au:'L3a.wav', w:[['Делаем',.05],['так,',.58],['чтобы',1.08],['вас',1.46],['нашли',1.76]]},
+ {n:3, yaw:20, tilt:15, br:3, acc:4, au:'L3c.wav', w:[['Пишем',.06],['под',.40],['ваш',.64],['продукт',.91],['креативы',1.48]]},
+ {n:4, yaw:0, tilt:12, br:1, acc:3, au:'L4.wav',  w:[['Запускаем',.05],['день',.99],['в',1.43],['день',1.54]]},
+ {n:5, yaw:15, tilt:12, br:3, fw:820, acc:0, au:'L5.wav',  w:[['1000',.05],['новых',.57],['заявок',1.05],['у',1.69],['наших',1.71],['клиентов',2.18]]},
+ {n:6, yaw:-18, tilt:12, br:2, fw:830, acc:3, au:'L6.wav',  w:[['Помогаем',.05],['вашему',.74],['бизнесу',1.30],['расти',1.95]]},
+ // 7 = hero (Damir 11-17, spec hero30s): rs = row size factors, lhr = per-row line height factors; slam = words that F-slam, bz = their camera bump [zoom, shake]
+ {n:7, yaw:-6, tilt:0, br:[1,2,3], acc:1, au:null, rs:[.22,1,.34,.34], lhr:[4.3,1.0,1.12,1.02], fw:820, cap:900, slam:[1,2,3], bz:{1:[280,28],2:[110,12],3:[110,12]},
+  // flat:true, // REVERTED (Damir: v14 extruded look kept) v15 (REQUESTS #12, Damir 11-17 «looks like a cartoon»): flat like the tagline (no grey extrusion sides, no hard catcher shadow); Final.tsx adds the soft down-right shadow
+  w:[['Более',.45],['30',.7],['успешных',1.2],['клиентов',1.2]]},
+ {n:8, yaw:0, tilt:15, br:3, acc:2, au:'L8.wav',  w:[['Считаем',.05],['до',.63],['оплаты,',.81],['а',1.48],['не',1.53],['до',1.71],['охватов',1.89]]},
+ {n:9, yaw:-15, tilt:12, br:3, fw:820, acc:-1, au:null, w:[['Чтобы',.07],['вас',.40],['заметили',.64]]}, // reel 3b (line 2's second half), capture only
+ // 10 / 12 = tagline v2 (Damir 2026-11-17 evening: "bigger, like the 24FRAME text"): flat (logo-style: no extrusion/bevel, unlit «FRAME» grey #363636),
+ // left-aligned like the logo (x0 px), 2 rows, as wide as x 120-960 allows; cy = block centre so row 1 clears the safe-zone top (260) and row 2 stays
+ // above b08's «Клиника» header at the clinic-card moment (g 990). 10 = A: «заявок» orange. 12 = B: all grey + the logo's orange vertical bar (bar: [x px, width px]).
+ {n:10, br:3, x0:124, fw:836, lhr:[1.14,1.14], acc:3, au:null, cy:352, flat:true, w:[['Ваш',.095],['выбор',.47],['для',.71],['продуктивной',1.016],['работы',1.97]]}, // v3u (Damir 11-17): new wording, ink #111111 + orange #F84A12 (option C, like the other lines)
+ // review v4: scene 3 steps (brief: «Сайт → Google → Креативы», no voice), one row at the top of the safe zone (y 260+), capture only
+ {n:11, yaw:0, tilt:0, br:[], fw:660, acc:2, au:null, cy:292, bz:{2:[110,12]}, w:[['Сайт',.5],['→ Google',1.0],['→ Креативы',4.0]]},
+ {n:12, br:2, x0:172, fw:788, lhr:[1.14,1.14], acc:-1, au:null, cy:352, flat:true, bar:[124,6], w:[['Делаем',.14],['решения',.65],['и',1.48],['доводим',1.65],['до',2.31],['заявок',2.40]]},
+ // 13 = «24FRAME» logo as its own layer (REQUESTS #10, tagline v14): the o8 wall's baked logo (src 80) rebuilt in place, same wording/size/placement,
+ // «24» orange (oc = leading chars in the accent mat), «FRAME» #363636 (sampled), bar 3x thicker ([x, w, yTop, yBot] px), slams as ONE unit with the bar on the spoken «24FRAME».
+ // shad: real catcher shadow (key light upper-left -> falls down-right), cz = catcher gap px (sets the offset), so = its opacity.
+ {n:13, br:[], x0:LOGO.x0, sz:LOGO.sz, acc:0, oc:2, au:null, cy:LOGO.cy, flat:true, ink:'#363636', org:'#E6512E', bar:LOGO.bar, slam:[0,1], shad:true, cz:LOGO.cz, so:LOGO.so, sr:LOGO.sr, w:[['24FRAME',.13]]},
+];
+LINES.forEach(l => l.w = l.w.map(([t, s]) => ({t, s})));
+// stag = seconds between letters, dur / accDur = seconds a letter takes to land
+const ANIMS = {
+ A:{name:'Swing from left',  stag:0,      dur:.55, accDur:.8},
+ B:{name:'Swing from right', stag:0,      dur:.55, accDur:.8},
+ C:{name:'Spin',             stag:2/FPS,  dur:9/FPS, accDur:14/FPS},
+ D:{name:'Cascade',          stag:3/FPS,  dur:.7,  accDur:.9},
+ E:{name:'Rise',             stag:2/FPS,  dur:.55, accDur:.75},
+ F:{name:'Slam',             stag:0,      dur:.22, accDur:.2},
+ G:{name:'Flip-morph',       stag:2/FPS,  dur:.5,  accDur:.7},
+};
+// letter-level / word-level motion. lt = seconds since this letter/word began. tr = transform to fill.
+function motion(key, lt, acc, tr, wtr, word) {
+  const k = ANIMS[key], x = lt / ((word && word.dur) || (acc ? k.accDur : k.dur));   // word.dur = per-word override (capture.py durs, v15)
+  switch (key) {
+    case 'A': wtr.ry = -(acc ? 150 : 90) * RAD * (1 - E.outBack(x)); wtr.hinge = -1; break;
+    case 'B': wtr.ry =  (acc ? 150 : 90) * RAD * (1 - E.outBack(x)); wtr.hinge =  1; break;
+    case 'C': tr.ry = (acc ? 630 : 270) * RAD * (1 - E.outCubic(x)); break;
+    case 'D': tr.y = (acc ? 1300 : 800) * (1 - E.bounce(x)); tr.rx = -(acc ? 720 : 360) * RAD * (1 - E.outCubic(x)); break;
+    case 'E': tr.y = -(acc ? 600 : 400) * (1 - E.outBack(x)); break;
+    case 'G': tr.y = -(acc ? 450 : 250) * (1 - E.outBack(x)); tr.s = Math.max(.001, E.outCubic(x * 1.5)); break;
+    case 'F':
+      if (word.slam) { const p = E.inCubic(x); wtr.s = 3 - 2 * p; wtr.z = 900 * (1 - p); }
+      else wtr.s = Math.max(.001, .4 + .6 * E.outBack(x));
+      break;
+  }
+}
+const AUDIO = {};
+const audioFor = f => AUDIO[f] || (AUDIO[f] = Object.assign(new Audio(f), { preload: 'auto' }));
+
+/* ---------- renderer / scene ---------- */
+const stage = document.getElementById('stage');
+// ?cap = reel capture (capture.py): transparent 1080x1920 frames, no RAF loop, driven by api.cap/api.shot
+const CAP = new URLSearchParams(location.search).has('cap');
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: CAP });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = CAP ? null : new THREE.Color('#F6F6F3');
+// 50 mm lens on 36x24 sensor: vertical fov 27 deg. World unit = 1 px of the 1080x1920 frame.
+const FOV = 2 * Math.atan(12 / 50) / RAD, DIST = 960 / Math.tan(FOV / 2 * RAD), TILT = 0;   // Damir 11-17 "all letters straight to the frame": camera level (was 12 deg down), no perspective lean
+const cam = new THREE.PerspectiveCamera(FOV, 9 / 16, 100, 12000);
+const camBase = new THREE.Vector3(0, DIST * Math.sin(TILT), DIST * Math.cos(TILT));
+function sizeStage() {
+  if (CAP) { renderer.setPixelRatio(1); renderer.setSize(1080, 1920); return; }
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h); renderer.domElement.style.width = '100%'; renderer.domElement.style.height = '100%';
+}
+new ResizeObserver(sizeStage).observe(stage); sizeStage();
+
+const key = new THREE.DirectionalLight('#ffffff', 2.4);
+key.position.set(-600, 900, 2600); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 3; key.shadow.bias = -0.0004; key.shadow.normalBias = 1;
+Object.assign(key.shadow.camera, { left: -800, right: 800, top: 600, bottom: -600, near: 1500, far: 4500 });
+scene.add(key, key.target);
+const fill = new THREE.DirectionalLight('#ffeedd', .7); fill.position.set(1800, 400, 2200); scene.add(fill);
+const rim = new THREE.DirectionalLight('#ffffff', .6); rim.position.set(500, 1500, -2500); scene.add(rim);
+scene.add(new THREE.HemisphereLight('#ffffff', '#d8d6d0', .9));
+const catcher = new THREE.Mesh(new THREE.PlaneGeometry(6000, 6000), new THREE.ShadowMaterial({ opacity: .28 }));
+catcher.receiveShadow = true;
+
+// Damir 11-17 «30» "needs better orange, more bright": ONE switch for the accent glyphs (sheet docs/review/final/orange30-options.jpg).
+// Face caps are unlit (MeshBasic = the exact hex on screen; caps face the camera flat, so no shading is lost); sides/bevel stay lit, lighter than the face.
+// Damir 11-17 later: "orange and black on lines a bit more black, and orange more colours full": ONE switch for ink + accent
+// (sheet docs/review/final/ink-orange-options.jpg). ?ink=A|B|C overrides it (capture.py --ink). [caps, sides + bevel] per colour.
+const INK = 'C';
+const phys = (color, o = {}) => new THREE.MeshPhysicalMaterial({ color, roughness: .28, metalness: 0, clearcoat: 0, ...o });
+const flat = color => new THREE.MeshBasicMaterial({ color });
+const INK_MATS = {
+  // A = earlier 11-17: lit dark-grey ink with light-grey sides, orange «C» (#FF6B38 face, emissive-lit peach sides)
+  A: () => ({ black: [phys('#2E2E30', { roughness: .5, specularIntensity: .5 }), phys('#77777A', { roughness: .5, specularIntensity: .5 })],
+              orange: [flat('#FF6B38'), phys('#FF7E50', { specularIntensity: .5, emissive: '#FF6B38', emissiveIntensity: .3 })] }),
+  // B = a bit deeper: unlit #1E1E1E face, mid-grey sides; orange #FC5A2E face, same-hue sides, less specular/emissive wash
+  B: () => ({ black: [flat('#1E1E1E'), phys('#5A5A5D', { roughness: .5, specularIntensity: .3 })],
+              orange: [flat('#FC5A2E'), phys('#FC6638', { specularIntensity: .25, emissive: '#FC5A2E', emissiveIntensity: .15 })] }),
+  // C = max: #111 face, sides only slightly lighter; fully saturated orange #F84A12, sides near the face hue, almost no wash
+  C: () => ({ black: [flat('#111111'), phys('#3C3C3F', { roughness: .5, specularIntensity: .25 })],
+              orange: [flat('#F84A12'), phys('#F8501A', { specularIntensity: .15, emissive: '#F84A12', emissiveIntensity: .08 })] }),
+};
+const mats = {
+  ...INK_MATS[INK](),
+  // flat logo-style type (lines with flat:true): exact on-screen hex, like o8's «24FRAME» (ink sampled #363636) and the brand orange
+  flatK: new THREE.MeshBasicMaterial({ color: '#111111' }), flatO: new THREE.MeshBasicMaterial({ color: '#F84A12' }),  // v3u: option C ink/orange (were #363636 / #FC6444)
+};
+const LM = {}, lmat = c => LM[c] || (LM[c] = new THREE.MeshBasicMaterial({ color: c }));   // per-line flat colours (logo)
+const lineGroup = new THREE.Group(); scene.add(lineGroup); lineGroup.add(catcher); // wall rotates with the line
+const CENTER_Y = 205; // safe zone y 260-1250 => centre 755 px from top => world y 205
+
+/* ---------- font + line building ---------- */
+let font;
+const glyphAdv = (ch, size) => {
+  const g = font.data.glyphs[ch] || font.data.glyphs[' '];
+  return g.ha * size / font.data.resolution;
+};
+function buildLine(line) {
+  // size fitted so the widest row is 800 px wide (safe zone is 840)
+  const cut = [0, ...[].concat(line.br), line.w.length], rows = cut.slice(0, -1).map((c, i) => line.w.slice(c, cut[i + 1]));
+  const adv = (t, s) => [...t].reduce((a, c) => a + glyphAdv(c, s), 0);
+  const rowW = (r, s) => r.reduce((a, w) => a + adv(w.t, s), 0) + (r.length - 1) * glyphAdv(' ', s);
+  const rs = line.rs || rows.map(() => 1), maxEm = Math.max(...rows.map((r, i) => rowW(r, rs[i])));
+  // Damir 11-17: "too dark and thick, bigger but less thick": default fit 790 -> 800 (widest the safe zone takes with hold drift + shadow), yawed lines +15-25 %, cap 190 -> 230, extrusion .25 -> .125 x size
+  const size = line.sz || Math.min(line.cap || 230, (line.fw || 800) / maxEm), geos = new Map();
+  // rows stacked about CENTER_Y (or px line.cy): lay = [size, baseline px from top] per row
+  const lhs = rs.map((k, i) => k * size * (line.lhr ? line.lhr[i] : 1.2)), H = lhs.reduce((a, b) => a + b, 0);
+  let top = CENTER_Y - (line.cy ? line.cy - 755 : 0) + H / 2;
+  const lay = rows.map((r, ri) => { const sz = rs[ri] * size, y = top - lhs[ri] / 2 - sz * .365; top -= lhs[ri]; return [sz, 960 - y]; });
+  const words = [], meshes = [];
+  rows.forEach((r, ri) => {
+    const size = lay[ri][0], depth = (line.flat ? .02 : .125) * size, w = rowW(r, size);
+    let x = line.x0 !== undefined ? line.x0 - 540 : -w / 2;   // x0 = left edge in frame px (world x 0 = frame centre)
+    const baseY = 960 - lay[ri][1];
+    r.forEach(word => {
+      const W = adv(word.t, size), idx = line.w.indexOf(word), acc = idx === line.acc;
+      const g = new THREE.Group(); g.position.set(x + W / 2, baseY, 0); lineGroup.add(g);
+      const wd = { start: word.s, acc, W, g, c0: g.position.clone(), letters: [], tr: newTr(), land: 0, slam: false };
+      let pen = 0;
+      for (const ch of word.t) {
+        const a = glyphAdv(ch, size);
+        let e = geos.get(ch + size);
+        if (!e) {
+          const geo = line.flat ? new TextGeometry(ch, { font, size, height: depth, curveSegments: 10, bevelEnabled: false })
+            : new TextGeometry(ch, { font, size, height: depth - 2 * .025 * size, curveSegments: 8, // total thickness stays = depth
+            bevelEnabled: true, bevelThickness: .025 * size, bevelSize: .025 * size, bevelSegments: 5 });
+          geo.computeBoundingBox(); const c = geo.boundingBox.getCenter(new THREE.Vector3());
+          geo.translate(-c.x, -c.y, -c.z); e = { geo, c }; geos.set(ch + size, e);
+        }
+        const ci = wd.letters.length, lo = line.oc !== undefined ? ci < line.oc : acc;   // oc: only the first oc chars of the accent word orange (logo «24»)
+        const m = new THREE.Mesh(e.geo, line.flat ? (line.ink ? (lo ? lmat(line.org) : lmat(line.ink)) : acc ? mats.flatO : mats.flatK) : acc ? mats.orange : mats.black);
+        m.castShadow = true; m.visible = false;
+        // glyph box centre sits where its pen position + bbox centre says; ch width box centre = pen + e.c.x
+        const bx = pen + e.c.x - W / 2, by = e.c.y;
+        m.position.set(bx, by, 0); g.add(m);
+        const L = { m, bx, by, acc, tr: newTr(), g0y: g.position.y + by, h: (e.geo.boundingBox.max.y - e.geo.boundingBox.min.y) / 2, d: hash(meshes.length + 1) * .12, r1: hash(meshes.length + 7), r2: hash(meshes.length + 13), gx: g.position.x + bx, ch };
+        wd.letters.push(L); meshes.push(L); pen += a;
+      }
+      words.push(wd); x += W + glyphAdv(' ', size);
+    });
+  });
+  if (line.bar) {   // the logo's orange vertical bar as one more F «word» (lands with the first word, falls first: leftmost)
+    const sz = lay[0][0], yTop = line.bar[2] !== undefined ? 960 - line.bar[2] : 960 - lay[0][1] + .72 * sz + .3 * sz, yBot = line.bar[3] !== undefined ? 960 - line.bar[3] : 960 - lay[lay.length - 1][1] - .3 * sz, H = yTop - yBot;
+    const geo = new THREE.BoxGeometry(line.bar[1], H, .02 * sz), cx = line.bar[0] + line.bar[1] / 2 - 540;
+    const g = new THREE.Group(); g.position.set(cx, (yTop + yBot) / 2, 0); lineGroup.add(g);
+    const m = new THREE.Mesh(geo, line.org ? lmat(line.org) : mats.flatO); m.castShadow = true; m.visible = false; g.add(m);
+    const L = { m, bx: 0, by: 0, acc: false, tr: newTr(), g0y: g.position.y, h: H / 2, d: 0, r1: hash(99), r2: hash(101), gx: cx, ch: '|' };
+    words.push({ start: line.w[0].s, acc: false, W: line.bar[1], g, c0: g.position.clone(), letters: [L], tr: newTr(), land: 0, slam: false, bar: true });
+    meshes.push(L); geos.set('|bar', { geo });
+  }
+  [...meshes].sort((a, b) => a.gx - b.gx).forEach((l, i, arr) => l.rank = i / Math.max(1, arr.length - 1));
+  return { words, letters: meshes, size, geos };
+}
+function newTr() { return { x: 0, y: 0, z: 0, rx: 0, ry: 0, rz: 0, s: 1, hinge: 0 }; }
+function resetTr(t) { t.x = t.y = t.z = t.rx = t.ry = t.rz = 0; t.s = 1; t.hinge = 0; }
+
+/* ---------- state ---------- */
+const S = { line: 4, anim: 'C', voice: true, speed: 1, playing: true, t: 0, prev: -1, A: null, B: null, cycle: 5, Te: 0, ev: [], bumps: [], morph: null };
+function clearSet(set) {
+  if (!set) return;
+  set.words.forEach(w => lineGroup.remove(w.g));
+  set.geos.forEach(e => e.geo.dispose());
+}
+function build() {
+  clearSet(S.A); clearSet(S.B); S.B = null;
+  const L = LINES[S.line - 1], k = ANIMS[S.anim], G = S.anim === 'G';
+  // shad lines (logo): VSM = a soft, blurred real shadow (PCFSoft ignores radius and drew a hard offset copy); everything else as before
+  renderer.shadowMap.type = L.shad ? THREE.VSMShadowMap : THREE.PCFSoftShadowMap; key.shadow.radius = L.shad ? L.sr : 3; key.shadow.blurSamples = 25;
+  S.A = buildLine(L);
+  S.bumps = []; S.ev = [];
+  if (L.au) S.ev.push({ t: 0, f: L.au });
+  let Tl = 0;
+  const slams = S.anim !== 'F' ? [] : L.slam || [L.acc >= 0 ? L.acc : L.w.length - 1];
+  S.A.words.forEach((w, i) => {
+    w.slam = slams.includes(i);
+    const dur = (w.acc || w.slam) ? k.accDur : k.dur;
+    w.land = w.start + (w.letters.length - 1) * k.stag + dur;
+    Tl = Math.max(Tl, w.land);
+    const bz = L.bz && L.bz[i];
+    if (S.anim === 'F' && w.slam) { if (!S.bumps.some(b => b.w.start === w.start)) S.bumps.push({ w, t0: w.land, zoom: bz ? bz[0] : 420, shake: bz ? bz[1] : 28, dur: 6 / FPS }); }   // words slamming together: one bump
+    else if (w.acc) S.bumps.push({ w, t0: w.land, zoom: 45, shake: 0, dur: .25 });
+  });
+  if (G) {
+    const nl = LINES[S.line % 8];
+    S.B = buildLine(nl);
+    S.B.words.forEach(w => { w.g.visible = false; });
+    const morphStart = Tl + 1.0, outDur = .18, outSpread = .3;
+    const morphIn = morphStart + outSpread + outDur + .05;
+    S.morph = { start: morphStart, in: morphIn, outDur, outSpread, inSpread: .3 };
+    if (nl.au) S.ev.push({ t: morphIn, f: nl.au });
+    const accL = S.B.letters.filter(l => l.acc);
+    if (accL.length) S.bumps.push({ t0: morphIn + Math.min(...accL.map(l => l.rank)) * .3 + .45, zoom: 45, shake: 0, dur: .25 });
+    S.Te = morphIn + .3 + .45 + 1.5;
+  } else S.Te = Tl + 1.5;
+  S.cycle = S.Te + .4 + .5;
+  S.t = 0; S.prev = -1;
+}
+
+/* ---------- per-frame pose ---------- */
+// Damir 11-17 (later): "the letters drop looks childish, make them disappear all at one time": the gravity fall is gone. Letters hold
+// their rest pose through the exit window (capture.py records to Te + .41); Final.tsx fades the whole pk layer from Te (EXIT 'A' | 'B').
+// The interactive preview fades the canvas the same way (option A: 9 f ease-in).
+function place(l) { const m = l.m, t = l.tr;
+  m.position.set(l.bx + t.x, l.by + t.y, t.z); m.rotation.set(t.rx, t.ry, t.rz); m.scale.setScalar(t.s); m.visible = true; }
+function frame(t) {
+  const G = S.anim === 'G', k = ANIMS[S.anim];
+  S.A.letters.forEach(l => l.m.visible = false);
+  if (S.B) S.B.letters.forEach(l => l.m.visible = false);
+  for (const w of S.A.words) {
+    const u = t - w.start, wt = w.tr; resetTr(wt);
+    if (u < 0) { w.g.visible = false; continue; }
+    w.g.visible = true;
+    if (S.anim === 'F' || S.anim === 'A' || S.anim === 'B') motion(S.anim, u, w.acc || w.slam, null, wt, w);
+    // review v4: a slamming word in flight (z up to 900, scale 3) threw a big offset shadow on the wall = a readable grey copy; it casts only once landed
+    const fly = S.anim === 'F' && w.slam && u < k.accDur; w.letters.forEach(l => { l.m.castShadow = !fly && (!LINES[S.line - 1].flat || !!LINES[S.line - 1].shad); });   // shad: the logo casts a real one (REQUESTS #10)   // flat lines: no hard catcher shadow (read as a doubled copy); Final.tsx adds the logo's soft one
+    if (w.acc) { const p = (t - w.land) / .22; if (p >= 0 && p < 1) wt.s *= 1 + .15 * (1 - E.outCubic(p)); }
+    let px = w.c0.x, pz = 0;
+    if (wt.hinge) { const h = wt.hinge, hw = w.W / 2; // keep the hinge edge fixed in space
+      px += h < 0 ? hw * (Math.cos(wt.ry) - 1) : hw * (1 - Math.cos(wt.ry));
+      pz += h < 0 ? -hw * Math.sin(wt.ry) : hw * Math.sin(wt.ry); }
+    w.g.position.set(px + wt.x, w.c0.y + wt.y, pz + wt.z); w.g.rotation.set(0, wt.ry, 0); w.g.scale.setScalar(Math.max(wt.s, .001));
+    w.letters.forEach((l, i) => {
+      resetTr(l.tr);
+      const lt = u - i * k.stag; if (lt < 0) return;
+      if (S.anim !== 'F' && S.anim !== 'A' && S.anim !== 'B') motion(S.anim, lt, w.acc, l.tr, wt, w);
+      if (G && t >= S.morph.start) {
+        const x = (t - S.morph.start - l.rank * S.morph.outSpread) / S.morph.outDur;
+        if (x >= 1) return; // fully gone (edge-on and hidden) before any new letter shows
+        if (x > 0) l.tr.ry = 90 * RAD * E.inQuad(x);
+      }
+      place(l);
+    });
+  }
+  if (G && S.B && t >= S.morph.in) {
+    for (const w of S.B.words) {
+      w.g.visible = true; w.g.position.copy(w.c0); w.g.rotation.set(0, 0, 0); w.g.scale.setScalar(1);
+      for (const l of w.letters) {
+        resetTr(l.tr);
+        const dur = l.acc ? .45 : .3, lt = t - S.morph.in - l.rank * S.morph.inSpread;
+        if (lt < 0) continue;
+        l.tr.ry = -(l.acc ? 270 : 90) * RAD * (1 - E.outCubic(lt / dur));
+        if (l.acc) { const p = (lt - dur) / .22; if (p >= 0 && p < 1) l.tr.s = 1 + .15 * (1 - E.outCubic(p)); }
+        place(l);
+      }
+    }
+  }
+  // hold drift of the whole line
+  lineGroup.rotation.set(0, 0, 0);   // Damir 11-17: every line rests straight to camera (per-line yaw/tilt in LINES + the hold drift are no longer used)
+  // camera bumps
+  let zoom = 0, sx = 0, sy = 0;
+  for (const b of S.bumps) { const p = (t - b.t0) / b.dur; if (p < 0 || p > 1) continue;
+    const f = (1 - p) ** 2; zoom += b.zoom * f;
+    if (b.shake) { const fr = Math.floor(t * FPS); sx += (hash(fr) - .5) * 2 * b.shake * f; sy += (hash(fr + 99) - .5) * 2 * b.shake * f; } }
+  cam.position.set(camBase.x + sx, camBase.y + sy, camBase.z).addScaledVector(camBase.clone().normalize(), -zoom);
+  cam.lookAt(sx * .3, sy * .3, 0);
+  key.target.position.set(0, CENTER_Y, 0);
+  const Ln = LINES[S.line - 1]; catcher.position.set(0, 0, Ln.cz ? -Ln.cz : -(.125 * S.A.size) / 2 - 6); catcher.material.opacity = Ln.so ?? .28;
+}
+
+/* ---------- audio ---------- */
+function stopAudio() { Object.values(AUDIO).forEach(a => a.pause()); }
+function playAudio(f) {
+  if (!S.voice || !f) return;
+  stopAudio(); const a = audioFor(f); a.currentTime = 0; a.playbackRate = S.speed; a.play().catch(() => {});
+}
+function fireEvents(prev, t) { for (const e of S.ev) if (e.t > prev && e.t <= t) playAudio(e.f); }
+
+/* ---------- loop ---------- */
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min(.1, (now - last) / 1000); last = now;
+  if (S.playing) {
+    S.t += dt * S.speed;
+    if (S.t >= S.cycle) { S.t -= S.cycle; S.prev = -1; }
+    fireEvents(S.prev, S.t); S.prev = S.t;
+  }
+  frame(S.t); renderer.render(scene, cam);
+  renderer.domElement.style.opacity = 1 - Math.min(1, Math.max(0, (S.t - S.Te) / .3)) ** 2;   // preview of the whole-line exit (captures ignore CSS)
+  requestAnimationFrame(tick);
+}
+function restart() { stopAudio(); S.t = 0; S.prev = -1; S.playing = true; }
+
+/* ---------- UI ---------- */
+const $ = id => document.getElementById(id);
+const selLine = $('line'), animsEl = $('anims');
+LINES.forEach(l => selLine.add(new Option(`${l.n}. ${l.w.map(w => w.t).join(' ')}`, l.n)));
+Object.entries(ANIMS).forEach(([k, a]) => {
+  const b = document.createElement('button'); b.dataset.k = k; b.innerHTML = `<i>${k}</i><span>${a.name}</span>`;
+  b.onclick = () => select(S.line, k); animsEl.appendChild(b);
+});
+function select(line, anim) {
+  S.line = line; S.anim = anim; selLine.value = line;
+  animsEl.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.k === anim));
+  $('bL').textContent = anim; $('bN').textContent = `Line ${line} · ${ANIMS[anim].name}`;
+  stopAudio(); build(); restart();
+  try { history.replaceState(null, '', `#${line}${anim}`); } catch (e) {}
+}
+selLine.onchange = () => select(+selLine.value, S.anim);
+$('play').onclick = restart;
+$('voice').onclick = e => { S.voice = !S.voice; e.target.textContent = 'Voice: ' + (S.voice ? 'on' : 'off'); e.target.classList.toggle('on', S.voice); if (!S.voice) stopAudio(); };
+$('speed').onclick = e => { S.speed = S.speed === 1 ? .5 : 1; e.target.textContent = `Speed ${S.speed === 1 ? '1x' : '0.5x'}`; e.target.classList.toggle('on', S.speed !== 1); Object.values(AUDIO).forEach(a => a.playbackRate = S.speed); };
+
+// test hooks: window.api.go(line, anim); api.seek(seconds) pauses at that moment
+window.api = {
+  go: (l, a) => select(l, a),
+  seek: t => { stopAudio(); S.playing = false; S.t = t; },
+  get cycle() { return S.cycle; },
+  // capture: line, anim, word impact times (s), exit start Te (s), exit 'fall'|'swept'. Impact = spoken start (brief), so each word starts dur earlier.
+  // dy = the layer's final vertical place in the reel (was Final.tsx LAYERS dy): baked into the capture by shifting the view, (kept from the fall exit, harmless).
+  cap: (l, a, times, Te, exit, dy = 0, durs = null) => {   // durs = per-word landing time (s) or null = the anim's own
+    const k = ANIMS[a], L = LINES[l - 1]; S.vy = -dy;
+    if (dy) cam.setViewOffset(1080, 1920, 0, -dy, 1080, 1920); else cam.clearViewOffset();
+    L.w.forEach((w, i) => { w.s = times[i]; }); select(l, a);
+    S.A.words.forEach((w, i) => { const d0 = (w.acc || w.slam) ? k.accDur : k.dur; w.dur = (durs && !w.bar && durs[i]) || null; w.start -= w.dur || d0; w.land -= d0; });   // first letter lands on the spoken start (C staggers the rest after it); a shorter dur only starts the word later
+    S.bumps.forEach(b => { b.t0 = b.w.land; });   // each bump on its own word's shifted landing
+    S.Te = Te; S.exit = exit; S.playing = false;
+    return { first: Math.min(...S.A.words.map(w => w.start)), end: Te + .41 };
+  },
+  shot: t => { S.t = t; frame(t); renderer.render(scene, cam); return renderer.domElement.toDataURL('image/png'); }, get info() { return { Te: S.Te, morph: S.morph, words: S.A.words.map(w => w.land) }; },
+};
+
+new TTFLoader().load('InterTight-Bold.ttf', json => {
+  font = new Font(json);
+  const m = /^#(\d)([A-G])$/.exec(location.hash);
+  select(m ? +m[1] : 4, m ? m[2] : 'C');
+  window.__ready = true;
+  if (!CAP) requestAnimationFrame(tick);
+});
+</script>

@@ -1,0 +1,4309 @@
+{
+ "version": 1,
+ "about": "Meme sounds, meme video overlays and emoji for the reaction FX, and the per-clip hit plan.",
+ "moods": [
+  "shock",
+  "laugh",
+  "fail",
+  "hype",
+  "cringe",
+  "sus",
+  "win"
+ ],
+ "items": [
+  {
+   "file": "../boom.wav",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "hype"
+   ],
+   "start": 0,
+   "len": 1.4,
+   "role": "hit",
+   "gain_db": -6.3,
+   "streamer": null
+  },
+  {
+   "file": "../tap.wav",
+   "kind": "sound",
+   "mood": [
+    "any"
+   ],
+   "start": 0,
+   "len": 0.35,
+   "role": "filler",
+   "gain_db": -0.4,
+   "streamer": null
+  },
+  {
+   "file": "../whoosh.wav",
+   "kind": "sound",
+   "mood": [
+    "any"
+   ],
+   "start": 0,
+   "len": 0.5,
+   "role": "filler",
+   "gain_db": -0.5,
+   "streamer": null
+  },
+  {
+   "file": "../pop.wav",
+   "kind": "sound",
+   "mood": [
+    "any"
+   ],
+   "start": 0,
+   "len": 0.18,
+   "role": "filler",
+   "gain_db": 0.8,
+   "streamer": null
+  },
+  {
+   "file": "../snap.wav",
+   "kind": "sound",
+   "mood": [
+    "any"
+   ],
+   "start": 0,
+   "len": 0.12,
+   "role": "filler",
+   "gain_db": -1.0,
+   "streamer": null
+  },
+  {
+   "file": "../thud.wav",
+   "kind": "sound",
+   "mood": [
+    "any"
+   ],
+   "start": 0,
+   "len": 0.45,
+   "role": "filler",
+   "gain_db": -2.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_airhorn_dj.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype",
+    "win"
+   ],
+   "start": 0.2,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -3.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_among_us_role_reveal_sus.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": 5.7,
+   "streamer": null
+  },
+  {
+   "file": "snd_anime_wow.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "win"
+   ],
+   "start": 0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": 2.8,
+   "streamer": null
+  },
+  {
+   "file": "snd_aughhh_tiktok.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh",
+    "fail"
+   ],
+   "start": 0,
+   "len": 1.84,
+   "role": "hit",
+   "gain_db": 7.6,
+   "streamer": null
+  },
+  {
+   "file": "snd_bruh.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh",
+    "fail",
+    "cringe"
+   ],
+   "start": 0,
+   "len": 0.6,
+   "role": "hit",
+   "gain_db": -4.0,
+   "streamer": null
+  },
+  {
+   "file": "snd_crowd_ooh_sitcom.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "cringe"
+   ],
+   "start": 0,
+   "len": 1.97,
+   "role": "hit",
+   "gain_db": -0.9,
+   "streamer": null
+  },
+  {
+   "file": "snd_emotional_damage_steven_he.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -9.3,
+   "streamer": null
+  },
+  {
+   "file": "snd_fart_with_reverb.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh",
+    "cringe"
+   ],
+   "start": 0,
+   "len": 1.45,
+   "role": "hit",
+   "gain_db": -1.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_huh_cat.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "sus"
+   ],
+   "start": 1.2,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -2.6,
+   "streamer": null
+  },
+  {
+   "file": "snd_ishowspeed_bark.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -8.5,
+   "streamer": "IShowSpeed"
+  },
+  {
+   "file": "snd_ishowspeed_why_bro_what_am_i_doing_wrong.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0,
+   "len": 1.35,
+   "role": "hit",
+   "gain_db": -8.9,
+   "streamer": "IShowSpeed"
+  },
+  {
+   "file": "snd_metal_pipe_falling.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0,
+   "len": 2.2,
+   "role": "hit",
+   "gain_db": -0.1,
+   "streamer": null
+  },
+  {
+   "file": "snd_oh_hell_nah.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "cringe"
+   ],
+   "start": 0,
+   "len": 3.0,
+   "role": "hit",
+   "gain_db": -4.4,
+   "streamer": null
+  },
+  {
+   "file": "snd_oh_no_no_no_tiktok.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 12.8,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": 2.7,
+   "streamer": null
+  },
+  {
+   "file": "snd_record_scratch.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail",
+    "cringe"
+   ],
+   "start": 0,
+   "len": 0.65,
+   "role": "filler",
+   "gain_db": 3.1,
+   "streamer": null
+  },
+  {
+   "file": "snd_sewey.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype",
+    "win"
+   ],
+   "start": 0,
+   "len": 1.49,
+   "role": "hit",
+   "gain_db": -3.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_spongebob_2_hours_later.mp3",
+   "kind": "sound",
+   "mood": [
+    "time"
+   ],
+   "start": 0.3,
+   "len": 1.9,
+   "role": "none",
+   "gain_db": 11.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_sus_sound_effect.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0,
+   "len": 0.82,
+   "role": "hit",
+   "gain_db": 6.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_taco_bell_bong.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "fail"
+   ],
+   "start": 0,
+   "len": 1.86,
+   "role": "filler",
+   "gain_db": -0.1,
+   "streamer": null
+  },
+  {
+   "file": "snd_vine_boom.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0,
+   "len": 1.25,
+   "role": "hit",
+   "gain_db": -8.7,
+   "streamer": null
+  },
+  {
+   "file": "ovl_among_us_yellow_twerk_greenscreen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "sus",
+    "hype"
+   ],
+   "start": 0.5,
+   "len": 2.5,
+   "key": "0x12FF08",
+   "similarity": 0.12,
+   "crop": [
+    0.15,
+    0,
+    0.7,
+    1
+   ],
+   "audio": false,
+   "despill": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_cat_vibing_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype",
+    "win"
+   ],
+   "start": 3.0,
+   "len": 2.5,
+   "key": "0x14B814",
+   "similarity": 0.09,
+   "crop": [
+    0,
+    0.3,
+    1,
+    0.7
+   ],
+   "audio": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_dancing_cat_meme_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype",
+    "laugh"
+   ],
+   "start": 1.0,
+   "len": 2.5,
+   "key": "0x02F303",
+   "similarity": 0.15,
+   "crop": [
+    0.15,
+    0.15,
+    0.7,
+    0.65
+   ],
+   "audio": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_gta_san_andreas_respect_mission_passed_g.mp4",
+   "kind": "overlay",
+   "mood": [
+    "win"
+   ],
+   "start": 0.3,
+   "len": 2.5,
+   "key": "0x00FE00",
+   "similarity": 0.15,
+   "crop": [
+    0.1875,
+    0.32,
+    0.625,
+    0.333
+   ],
+   "audio": true,
+   "gain_db": 1.2,
+   "streamer": null,
+   "text": true
+  },
+  {
+   "file": "ovl_ishowspeed_shocking_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "shock"
+   ],
+   "start": 8.6,
+   "len": 2.5,
+   "key": "0x78FD00",
+   "similarity": 0.15,
+   "crop": null,
+   "audio": true,
+   "gain_db": -2.6,
+   "streamer": "IShowSpeed"
+  },
+  {
+   "file": "ovl_james_doakes_dexter_meme_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "sus"
+   ],
+   "start": 6.3,
+   "len": 2.5,
+   "key": null,
+   "similarity": 0.15,
+   "crop": null,
+   "audio": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_laughing_dog_meme_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.3,
+   "len": 2.5,
+   "key": "0x00FE00",
+   "similarity": 0.15,
+   "crop": [
+    0.3,
+    0.05,
+    0.36,
+    0.95
+   ],
+   "audio": true,
+   "gain_db": -0.5,
+   "streamer": null
+  },
+  {
+   "file": "ovl_morshu_eyebrow_raise_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "sus",
+    "cringe"
+   ],
+   "start": 0,
+   "len": 2.3,
+   "key": "0x00FF00",
+   "similarity": 0.15,
+   "crop": null,
+   "audio": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_puppet_cringes_reaction_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "cringe"
+   ],
+   "start": 4.0,
+   "len": 2.5,
+   "key": null,
+   "similarity": 0.15,
+   "crop": [
+    0.63,
+    0,
+    0.35,
+    1
+   ],
+   "audio": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_shocked_amazed_meme_clip_green_screen.mp4",
+   "kind": "overlay",
+   "mood": [
+    "shock"
+   ],
+   "start": 1.0,
+   "len": 2.5,
+   "key": null,
+   "similarity": 0.15,
+   "crop": null,
+   "audio": false,
+   "streamer": null
+  },
+  {
+   "file": "ovl_confused_math_lady.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 74.0
+  },
+  {
+   "file": "ovl_explosion.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 74.0
+  },
+  {
+   "file": "ovl_kazotsky_kick_tf2_dance.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 1.5
+  },
+  {
+   "file": "ovl_michael_jordan_stop_it_get_some_help.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -0.5
+  },
+  {
+   "file": "ovl_mlg_hit_marker.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.58,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 0.9
+  },
+  {
+   "file": "ovl_mlg_quickscope.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -8.3
+  },
+  {
+   "file": "ovl_mrbeast_rizz_dance.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": "MrBeast",
+   "gain_db": 14.4
+  },
+  {
+   "file": "ovl_patrick_bateman_dafoe_meme.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -7.5
+  },
+  {
+   "file": "ovl_patrick_bateman_meme_2.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -2.4
+  },
+  {
+   "file": "ovl_rico_kaboom.mp4",
+   "kind": "overlay",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 9.9
+  },
+  {
+   "file": "ovl_rock_eyebrow_raise.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 0.1
+  },
+  {
+   "file": "ovl_skipper_smile_and_wave.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 12.4
+  },
+  {
+   "file": "ovl_subscribe_button_bell.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -1.5
+  },
+  {
+   "file": "ovl_surprised_pikachu_face.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": 2.5
+  },
+  {
+   "file": "ovl_verstappen_dudududu.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -1.5
+  },
+  {
+   "file": "ovl_wide_putin_walking.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null,
+   "gain_db": -8.0
+  },
+  {
+   "file": "snd_awkward_crickets.mp3",
+   "kind": "sound",
+   "mood": [
+    "cringe"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": 8.6,
+   "streamer": null
+  },
+  {
+   "file": "snd_ayo_the_pizza_here.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 1.3,
+   "role": "hit",
+   "gain_db": 5.8,
+   "streamer": null
+  },
+  {
+   "file": "snd_ba_dum_tss.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -1.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_bonk.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 0.43,
+   "role": "filler",
+   "gain_db": -1.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_cartoon_boing.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail",
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 1.56,
+   "role": "hit",
+   "gain_db": -0.7,
+   "streamer": null
+  },
+  {
+   "file": "snd_chipi_chipi_chapa_chapa.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.1,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_cj_ah_shit_here_we_go_again.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": 11.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_coffin_dance.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -4.6,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_curb_your_enthusiasm_theme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.0,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_directed_by_robert_b_weide.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.7,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_dun_dun_dunnn.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -4.3,
+   "streamer": null
+  },
+  {
+   "file": "snd_erm_what_the_sigma.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus",
+    "cringe"
+   ],
+   "start": 0.0,
+   "len": 1.39,
+   "role": "hit",
+   "gain_db": -1.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_fahhh.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.28,
+   "role": "hit",
+   "gain_db": 13.7,
+   "streamer": null
+  },
+  {
+   "file": "snd_fbi_open_up.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.01,
+   "role": "hit",
+   "gain_db": 1.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_gigachad_theme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.3,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_gta_v_wasted.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -0.9,
+   "streamer": null
+  },
+  {
+   "file": "snd_michael_jordan_stop_it_get_some_help_aud.mp3",
+   "kind": "sound",
+   "mood": [
+    "cringe"
+   ],
+   "start": 0.0,
+   "len": 2.48,
+   "role": "hit",
+   "gain_db": -0.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_mission_failed_we_ll_get_em_next_time.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -4.9,
+   "streamer": null
+  },
+  {
+   "file": "snd_mlg_hitmarker.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.37,
+   "role": "filler",
+   "gain_db": 0.3,
+   "streamer": null
+  },
+  {
+   "file": "snd_owen_wilson_wow.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock",
+    "win"
+   ],
+   "start": 0.0,
+   "len": 0.8,
+   "role": "hit",
+   "gain_db": 10.4,
+   "streamer": null
+  },
+  {
+   "file": "snd_rizz.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus",
+    "win"
+   ],
+   "start": 0.0,
+   "len": 1.93,
+   "role": "hit",
+   "gain_db": -2.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_sad_violin.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -3.6,
+   "streamer": null
+  },
+  {
+   "file": "snd_six_seven.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.45,
+   "role": "hit",
+   "gain_db": 9.3,
+   "streamer": null
+  },
+  {
+   "file": "snd_skibidi_toilet.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -5.6,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_talking_ben_ho_ho_ho.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 1.56,
+   "role": "hit",
+   "gain_db": 2.2,
+   "streamer": null
+  },
+  {
+   "file": "snd_talking_ben_laugh.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 1.47,
+   "role": "hit",
+   "gain_db": 2.1,
+   "streamer": null
+  },
+  {
+   "file": "snd_talking_ben_no.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail",
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 0.64,
+   "role": "filler",
+   "gain_db": 6.0,
+   "streamer": null
+  },
+  {
+   "file": "snd_talking_ben_yes.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 0.92,
+   "role": "filler",
+   "gain_db": 3.3,
+   "streamer": null
+  },
+  {
+   "file": "snd_to_be_continued_roundabout.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.9,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "streamer": null
+  },
+  {
+   "file": "snd_what_the_hell_oh_my_god_no_way.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": -7.5,
+   "streamer": null
+  },
+  {
+   "file": "snd_wilhelm_scream.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail",
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.01,
+   "role": "hit",
+   "gain_db": -4.9,
+   "streamer": null
+  },
+  {
+   "file": "snd_windows_xp_error.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 0.99,
+   "role": "hit",
+   "gain_db": -3.6,
+   "streamer": null
+  },
+  {
+   "file": "snd_womp_womp.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "role": "hit",
+   "gain_db": 1.4,
+   "streamer": null
+  },
+  {
+   "file": "snd_yippee.mp3",
+   "kind": "sound",
+   "mood": [
+    "win",
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.96,
+   "role": "hit",
+   "gain_db": 3.6,
+   "streamer": null
+  },
+  {
+   "file": "ovl_asmongold_condems_gamedev_on_bluesky_ove.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Asmongold",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 4.9
+  },
+  {
+   "file": "ovl_charleston_white_keeps_it_real_with_adin.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -0.6
+  },
+  {
+   "file": "ovl_couldabeenrecords_couldabeenlove_druskim.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 10.8
+  },
+  {
+   "file": "ovl_druski_and_kai_cenat_fell_off_viral_blow.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 18.4
+  },
+  {
+   "file": "ovl_fanum_exploding_meme_vs_original.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -5.4
+  },
+  {
+   "file": "ovl_fanum_tax.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -7.8
+  },
+  {
+   "file": "ovl_fyp_ishowspeed_wspeed_roblox_2020.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -1.4
+  },
+  {
+   "file": "ovl_hasan_talk_about_crimes.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 3.6
+  },
+  {
+   "file": "ovl_hasanabi_people_don_t_believe_me_but_it_.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -0.9
+  },
+  {
+   "file": "ovl_how_mr_beast_thinks_we_watch_youtube.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -0.3
+  },
+  {
+   "file": "ovl_ishowspeed_about_to_blow_ambatoblow_drea.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 7.1
+  },
+  {
+   "file": "ovl_ishowspeed_world_s_hardest_game_freestyl.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -6.8
+  },
+  {
+   "file": "ovl_jimbo_zoomer_keking_on_adin_ross.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 7.0
+  },
+  {
+   "file": "ovl_joker_i_like_rizzing_kai_cenat_and_ishow.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": null,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -5.4
+  },
+  {
+   "file": "ovl_kai_cenat_reacts_to_kevin_gates_ig_story.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 4.0
+  },
+  {
+   "file": "ovl_kai_cenat_streamer_university_2026.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 10.5
+  },
+  {
+   "file": "ovl_keepin_it_real_wiv_druski_watch_de_hole_.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 14.8
+  },
+  {
+   "file": "ovl_lebrobro_fyp_viral_r6_rainbowsixsiege_ra.mp4",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "similarity": 0.15,
+   "audio": false,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "role": "hit",
+   "gain_db": -0.4
+  },
+  {
+   "file": "ovl_leigha_sapienti_hasan_gives_a_warning_to.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 18.4
+  },
+  {
+   "file": "ovl_mrbeast.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -4.7
+  },
+  {
+   "file": "ovl_mrbeast_all_endings_meme.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -1.2
+  },
+  {
+   "file": "ovl_plaqueboymax_vs_fanum_who_has_the_better.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Plaqueboymax",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 4.3
+  },
+  {
+   "file": "ovl_sbrbn_kai_cenat_just_threw_up_hella_gang.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -1.8
+  },
+  {
+   "file": "ovl_the_most_iconic_druski_live_moments.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 5.9
+  },
+  {
+   "file": "ovl_those_dropped_out_of_nowhere_jynxzi_luff.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": -1.4
+  },
+  {
+   "file": "ovl_xqc_feeds_ducks_to_obesity.mp4",
+   "kind": "overlay",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "key": null,
+   "similarity": 0.15,
+   "audio": true,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only",
+   "gain_db": 27.6
+  },
+  {
+   "file": "snd_adin_ross_shut_the_f_up.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.34,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.1,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_adin_ross_what.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.1,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.3,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_adinadin.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -10.9,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_agent_00x.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.04,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 6.5,
+   "streamer": "Agent 00",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_agent_00x_v2.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 6.9,
+   "streamer": "Agent 00",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_am_i_still_live_bruh.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.6,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_anthony_faze_rug_wow.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.47,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.8,
+   "streamer": null,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ar_neck.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 12.0,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_are_you_serious_right_neow_bro.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.49,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 13.3,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_asmongold_s_confession.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.6,
+   "streamer": "Asmongold",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_asmongold_wienerr.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.9,
+   "streamer": "Asmongold",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_average_ninja_stream.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.1,
+   "streamer": "Ninja",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ben_laughing_at_speed.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 2.07,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.5,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_boy_aint_no_way_boy_duke_dennis.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.2,
+   "streamer": "Duke Dennis",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_don_t_test_my_anger_buddy.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.4,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_double_it.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 3.7,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_energy.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.7,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_time_to_get_me_my_money.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 15.4,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_we_got_em.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.1,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_what_do_you_identify_as.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.36,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -4.3,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_what_do_you_mean_by_that_o_0.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.05,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -3.3,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_druski_wrap_it_up.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.96,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 11.8,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_duke_dennis.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.8,
+   "streamer": "Duke Dennis",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_fanum.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.65,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -7.0,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_fanum_explosion.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -9.8,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_fanum_laugh.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -4.5,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_fanum_loud.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.2,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_faze_rug_goin_live.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.2,
+   "streamer": null,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_get_back_n_kai_cenat.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.8,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_good_aimm.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.4,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_gyatt.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.0,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_hasan_five_knuckle_shuffle.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.4,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_i_m_gonna_smash_my_monitor_jynxzi.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.7,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_im_a_physician.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 3.4,
+   "streamer": "Asmongold",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_imagine_if_ninja_got_a_low_taper_fade.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 8.0,
+   "streamer": "Ninja",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_imbackmf.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.52,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.6,
+   "streamer": "Adin Ross",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishow_speed_siuu.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.69,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.0,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_abc_crashout.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.6,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_kill_that_boy.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -12.2,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_mad.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.5,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_raging.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.9,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_ronaldo_sui.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.8,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_screaming.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -13.9,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_shocked.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -6.1,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_shut_the_up.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.18,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.5,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ishowspeed_yapping.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.3,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_jynxzi_brick.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -4.5,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_jynxzi_pancakes.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 11.1,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_jynxzi_rage.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 21.6,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_jynxzi_so_we_are_in_copper.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.4,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 74.0,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_and_ishowspeed.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.3,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_bomboclat.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -3.5,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_doi_doi_doi.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.6,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_donation.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.9,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_gifted_sub.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.0,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_gta_6.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.6,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_gyaaaaa.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -8.9,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_interruption.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -5.3,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_la_peace.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.35,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -4.7,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_sus_sound_effect.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 11.1,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_kai_cenat_suspense.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 6.5,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_low_taper_fade.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 9.4,
+   "streamer": "Ninja",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_dance_meme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 14.7,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_deez_nuts.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.6,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_eliminated_sound_s_effect.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.72,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.3,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_give_me_some_money.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 6.3,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_intro.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.5,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_phonk.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.1,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_rizz.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.8,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_mr_beast_scream.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.25,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.8,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_my_man_my_man_wheres_my_man.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.0,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_new_opp_jynxzi.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.3,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ninja_low_taper_fade.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -10.9,
+   "streamer": "Ninja",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ninja_stream_sniping_meme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 9.4,
+   "streamer": "Ninja",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_no_dmca_song.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.1,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_oh_my_god_dude_hasanabi.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.6,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ooh_chica_i_miss_you_ishowspeed.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.0,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_pays_to_win_still_loses.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -1.0,
+   "streamer": "Asmongold",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_please_speed_i_need_this.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.2,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_pokimane.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.0,
+   "streamer": "Pokimane",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_pokimane_charisme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.7,
+   "streamer": "Pokimane",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_pokimane_karisme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.4,
+   "streamer": "Pokimane",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_pokimane_not_funny.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.8,
+   "streamer": "Pokimane",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_pokimane_omg_charisme_fried_audio.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.4,
+   "streamer": "Pokimane",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_ready_mr_beast.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.6,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_say_wallahi_bro.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.12,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 6.2,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_scared_ishowspeed.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 18.7,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_sketch_i_did_not.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.3,
+   "streamer": "Sketch",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_sketch_no.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.53,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.1,
+   "streamer": "Sketch",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_sketch_what_s_up_brother.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.1,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.6,
+   "streamer": "Sketch",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_skibidi_toilet_sigma_fanum_tax_only_in_o.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -3.8,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_speed_and_kai_cenat.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -6.0,
+   "streamer": "Kai Cenat",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_speed_n_scream.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.05,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -4.6,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_speed_screaming.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.5,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_stand_on_bisnuess.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 10.6,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_that_mf_cheating_jynxzi.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.5,
+   "streamer": "Jynxzi",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_that_s_la_peace.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.2,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_thats_gotta_be_racist_druski.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.4,
+   "streamer": "Druski",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_this_is_insane_dude_hasanabi.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.41,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.9,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_verbatim_xqc_meme.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -3.6,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_w_speed_ong_by_yung_kai_and_me.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.1,
+   "streamer": null,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_w_speed_song.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 5.1,
+   "streamer": "IShowSpeed",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_weaselly_little_liar_dude.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.6,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_what_a_weasley_little_liar.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.9,
+   "streamer": "Hasan",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_whats_going_on_guys_faze_rug.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 1.5,
+   "streamer": null,
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_whatsupbrother.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 1.11,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 3.7,
+   "streamer": "Sketch",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_wow_chat.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -5.5,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_wow_mrbeast.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 4.9,
+   "streamer": "MrBeast",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_bitconnect.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 0.1,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_claps_fast.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.8,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_dud.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.38,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 16.6,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_gets_game_ended.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.5,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_go_agane.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.9,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_lkedat.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.37,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": 2.5,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_smash.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.83,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -0.2,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_xqc_soy_scream.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -3.3,
+   "streamer": "xQc",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "snd_you_are_so_skibidi_you_are_so_fanum_tax.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "guessed": true,
+   "role": "hit",
+   "gain_db": -2.4,
+   "streamer": "Fanum",
+   "off": true,
+   "note": "streamer meme, not checked by ear or eye yet; for hand-written .fx.json plans only"
+  },
+  {
+   "file": "ovl_gta_v_wasted_black_screen_effect_video_s.mp4",
+   "kind": "overlay",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "death, dramatic cut to black",
+   "name": "GTA V Wasted black-screen effect (video+sound)",
+   "series": "GTA V",
+   "key": null,
+   "audio": true,
+   "off": true,
+   "gain_db": 4.5
+  },
+  {
+   "file": "ovl_mission_passed_meme_reupload_clip.mp4",
+   "kind": "overlay",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win",
+   "name": "Mission passed meme (reupload clip)",
+   "series": "San Andreas",
+   "key": null,
+   "audio": true,
+   "off": true,
+   "gain_db": -6.5
+  },
+  {
+   "file": "snd_all_we_had_to_do_was_follow_the_damn_tra.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail",
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "teammate fails simple task, betrayal",
+   "name": "All we had to do was follow the damn train CJ",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 2.6
+  },
+  {
+   "file": "snd_aw_my_dog_what_s_up_cj.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "friendly greeting, intro",
+   "name": "Aw my dog, what's up CJ",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -4.9
+  },
+  {
+   "file": "snd_big_smoke_ohhh_my_god.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "shock, hype",
+   "name": "Big Smoke OHHH MY GOD",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -4.6
+  },
+  {
+   "file": "snd_big_smoke_order.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "food, hype, absurd confidence",
+   "name": "Big Smoke order",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 1.1
+  },
+  {
+   "file": "snd_big_smoke_remember_that_name.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "betrayal, rise to top",
+   "name": "Big Smoke remember that name",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 1.9
+  },
+  {
+   "file": "snd_big_smoke_two_number_9s_order.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "food, random flex",
+   "name": "Big Smoke two number 9s order",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -0.9
+  },
+  {
+   "file": "snd_follow_the_damn_train_cj_alt.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "same, shorter/alt",
+   "name": "Follow the damn train CJ (alt)",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 2.3
+  },
+  {
+   "file": "snd_franklin_mission_passed_voice.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win, clean play",
+   "name": "Franklin 'Mission Passed!' voice",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -5.2
+  },
+  {
+   "file": "snd_franklin_text_notification.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.36,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "incoming message",
+   "name": "Franklin text notification",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 6.2
+  },
+  {
+   "file": "snd_grove_street_home.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "return, win, loyalty",
+   "name": "Grove Street - home",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -0.5
+  },
+  {
+   "file": "snd_gta_2_wasted.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.1,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "death, retro",
+   "name": "GTA 2 Wasted",
+   "series": "GTA 2",
+   "role": "hit",
+   "gain_db": -3.8
+  },
+  {
+   "file": "snd_gta_5_death_sound_wasted_alt.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "death, alt take",
+   "name": "GTA 5 death sound (wasted) alt",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -0.9
+  },
+  {
+   "file": "snd_gta_5_stop_the_vehicle_police.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "police chase, caught",
+   "name": "GTA 5 'Stop the vehicle' (police)",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -4.8
+  },
+  {
+   "file": "snd_gta_5_you_re_going_down.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "threat, before a fight",
+   "name": "GTA 5 'You're going down'",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -7.3
+  },
+  {
+   "file": "snd_gta_cheat_activated_sound.mp3",
+   "kind": "sound",
+   "mood": [
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.14,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "cheat, hacks, unfair advantage",
+   "name": "GTA cheat activated sound",
+   "series": "GTA series",
+   "role": "hit",
+   "gain_db": -1.0
+  },
+  {
+   "file": "snd_gta_iv_busted.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "arrest, caught in the act",
+   "name": "GTA IV Busted",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": -2.9
+  },
+  {
+   "file": "snd_gta_iv_mission_failed.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "fail, choke, lost fight",
+   "name": "GTA IV Mission Failed",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": -5.8
+  },
+  {
+   "file": "snd_gta_iv_mission_passed.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win",
+   "name": "GTA IV Mission Passed",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": 8.5
+  },
+  {
+   "file": "snd_gta_iv_permanent_death.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "death, final loss",
+   "name": "GTA IV Permanent Death",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": -6.1
+  },
+  {
+   "file": "snd_gta_iv_text_ringtone.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "incoming message",
+   "name": "GTA IV text ringtone",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": 18.8
+  },
+  {
+   "file": "snd_gta_sa_mission_passed_hq_respect.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win, respect gained",
+   "name": "GTA SA Mission Passed (HQ) + Respect",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -0.4
+  },
+  {
+   "file": "snd_gta_sa_mission_passed_sound_hd_archive_o.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win",
+   "name": "GTA SA Mission Passed sound HD (archive.org)",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 1.3
+  },
+  {
+   "file": "snd_gta_sa_respect_sting.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win, flex, big play",
+   "name": "GTA SA 'Respect +++' sting",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 0.9
+  },
+  {
+   "file": "snd_gta_v_busted.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail",
+    "sus"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "arrest, caught cheating/camping, ban",
+   "name": "GTA V Busted",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 4.6
+  },
+  {
+   "file": "snd_gta_v_mission_passed_jingle.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win, clutch finish, task done",
+   "name": "GTA V Mission Passed jingle",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 4.2
+  },
+  {
+   "file": "snd_gta_v_mission_passed_voicemod_re_make.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win",
+   "name": "GTA V Mission Passed (Voicemod re-make)",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 6.9
+  },
+  {
+   "file": "snd_gta_v_phone_text_notification.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 0.86,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "incoming message, donation alert",
+   "name": "GTA V phone text notification",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 2.2
+  },
+  {
+   "file": "snd_gta_v_wasted_death_sound_archive_org.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "death",
+   "name": "GTA V Wasted death sound (archive.org)",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -1.5
+  },
+  {
+   "file": "snd_gta_v_wasted_sound_effect.mp3",
+   "kind": "sound",
+   "mood": [
+    "fail"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "death, dying to a stupid thing",
+   "name": "GTA V Wasted sound effect",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 3.7
+  },
+  {
+   "file": "snd_lamar_roasts_franklin.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "roast, trash talk, friend gets owned",
+   "name": "Lamar roasts Franklin",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 11.5
+  },
+  {
+   "file": "snd_lamar_roasts_franklin_again.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "roast, second round",
+   "name": "Lamar roasts Franklin again",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 1.9
+  },
+  {
+   "file": "snd_michael_mission_passed_voice.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win, smug finish",
+   "name": "Michael 'Mission Passed!' voice",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -3.8
+  },
+  {
+   "file": "snd_niko_bellic_i_can_t_stand_this_shit.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "frustration, rage quit",
+   "name": "Niko Bellic 'I can't stand this shit'",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": 9.7
+  },
+  {
+   "file": "snd_niko_bellic_scream.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "pain, scream",
+   "name": "Niko Bellic scream",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": -1.9
+  },
+  {
+   "file": "snd_roman_are_you_sleeping.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "wake up, afk teammate",
+   "name": "ROMAN! ARE YOU SLEEPING!?",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": 3.8
+  },
+  {
+   "file": "snd_roman_hey_niko_let_s_go_bowling.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "random invite, cousin bit",
+   "name": "Roman: Hey Niko, let's go bowling",
+   "series": "GTA IV",
+   "role": "hit",
+   "gain_db": 2.2
+  },
+  {
+   "file": "snd_ryder_busta_straight_busta.mp3",
+   "kind": "sound",
+   "mood": [
+    "laugh"
+   ],
+   "start": 0.0,
+   "len": 2.09,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "insult, trash talk",
+   "name": "Ryder 'Busta! Straight busta!'",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 0.4
+  },
+  {
+   "file": "snd_shit_cj_shit.mp3",
+   "kind": "sound",
+   "mood": [
+    "shock"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "panic, close call",
+   "name": "SHIT, CJ! SHIT!",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": 8.8
+  },
+  {
+   "file": "snd_trevor_chips_and_dips_and_prostitutes.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "random chaos line",
+   "name": "Trevor: chips and dips and prostitutes",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": 12.7
+  },
+  {
+   "file": "snd_trevor_mission_passed_voice.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "chaotic win",
+   "name": "Trevor 'Mission Passed!' voice",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -3.5
+  },
+  {
+   "file": "snd_trevor_scream_1.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "rage, jumpscare, chaos",
+   "name": "Trevor scream 1",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -6.4
+  },
+  {
+   "file": "snd_trevor_scream_2.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "rage, chaos",
+   "name": "Trevor scream 2",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -5.6
+  },
+  {
+   "file": "snd_trevor_scream_3.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "rage, chaos",
+   "name": "Trevor scream 3",
+   "series": "GTA V",
+   "role": "hit",
+   "gain_db": -7.0
+  },
+  {
+   "file": "snd_vice_city_mission_passed.mp3",
+   "kind": "sound",
+   "mood": [
+    "win"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "win, retro vibe",
+   "name": "Vice City Mission Passed",
+   "series": "Vice City",
+   "role": "hit",
+   "gain_db": -11.2
+  },
+  {
+   "file": "snd_welcome_to_san_andreas_i_m_cj_from_grove.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 2.5,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "intro, arrival",
+   "name": "Welcome to San Andreas, I'm CJ from Grove Street",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -3.2
+  },
+  {
+   "file": "snd_you_picked_the_wrong_house_fool.mp3",
+   "kind": "sound",
+   "mood": [
+    "hype"
+   ],
+   "start": 0.0,
+   "len": 1.71,
+   "streamer": null,
+   "tags": [
+    "gta"
+   ],
+   "use_when": "ambush, kill, revenge",
+   "name": "You picked the wrong house fool",
+   "series": "San Andreas",
+   "role": "hit",
+   "gain_db": -0.1
+  }
+ ]
+}
