@@ -71,6 +71,7 @@ Read `clipper/CLIPPING_GUIDE.md` and `clipper/VIRAL_LESSONS.md` first.
 - **No memes on clips.** Memes (sparingly) only on narrated shorts.
 - **Blur nudity only.** Never censor, bleep, mute or star-out words.
 - **Narration in full natural sentences**, never fragments. The closing question must be clear.
+- **Open loop in every narrated short**: line 2 promises the most shocking fact/tip ("Stay to the end, because ...") and a late line pays it off. From `clipper/VIRAL_LESSONS.md`: watch time is the main factor, never a moment without a question.
 
 ## Things you must supply yourself
 
