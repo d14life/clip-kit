@@ -66,7 +66,7 @@ Read `clipper/CLIPPING_GUIDE.md` and `clipper/VIRAL_LESSONS.md` first.
 
 ## Our rules
 
-- **English clips**: score >= 8 and the clip is < 2 hours old.
+- **English clips**: score >= 8 and the moment is from the last 2 hours of the streamer's latest GTA 6 stream (the stream may have ended hours ago).
 - **Russian clips**: any age, score >= 5.
 - **No memes on clips.** Memes (sparingly) only on narrated shorts.
 - **Blur nudity only.** Never censor, bleep, mute or star-out words.
