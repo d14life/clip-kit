@@ -15,6 +15,7 @@ Plus a set of Claude Code skills that drive the workflow (scoring, shot planning
 | `clipper/` | The clip tool (`autoclip.py` live clipper, `export_clips.py`, `rerender.py`, ...) + guides (`CLIPPING_GUIDE.md`, `VIRAL_LESSONS.md`, `NUDITY_OPTIONS.md`, `ACCEPTANCE.md`). `clipper/extra/` has the helper scripts: `top.py` (Twitch top-clips list), `render1.py`, `cover.py`, `make_cover.py`, `pack.py`, `blur_spans.py`, `burn_hook.py`. |
 | `shorts/` | The narrated-shorts pipeline: Remotion code (`src/`), build scripts (`tools/scripts/`), `SOUND-RULES.md`, and example scripts/scenarios in `videos/*/` (`FISH-SCRIPT.txt`, `SCENARIO.md`). |
 | `sounds/` | Our own synthesised sound effects (claim-free) + `LICENSES.md`. |
+| `research/` | Our GTA 6 trend and topic research (X, YouTube, TikTok, Instagram), video ideas, story options and clip reviews. Start with `research/README.md`. |
 | `clipper/fx/` | The full meme library: `memes/` has 218 meme sounds (`snd_*.mp3`) and 54 meme overlays (`ovl_*.mp4`) with `catalog.json` (moods, trims) and `MEME_LIST.md`; plus emoji pngs and hit sounds. Run `python clipper\memes.py build` once to rebuild `fx/memes/cache/` (levelled/keyed copies). |
 
 ## Setup
