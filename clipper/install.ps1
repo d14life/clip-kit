@@ -16,6 +16,8 @@ if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) {
 }
 
 python test_detector.py
+Write-Host "Preparing the meme library (about 1 min)..."
+python memes.py build
 Write-Host ""
 Write-Host "Ready. Examples:" -ForegroundColor Green
 Write-Host '  python autoclip.py kaicenat'

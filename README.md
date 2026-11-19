@@ -29,7 +29,7 @@ You need:
 
 ```powershell
 cd clipper
-.\install.ps1            # installs streamlink + faster-whisper, checks ffmpeg, runs the detector self-test
+.\install.ps1            # installs streamlink + faster-whisper, checks ffmpeg, runs the self-test, prepares all memes
 cd ..\shorts
 npm install              # Remotion
 pip install -r requirements.txt
