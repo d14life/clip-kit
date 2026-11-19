@@ -13,12 +13,10 @@ cookies*.txt
 __pycache__/
 *.pyc
 .venv*/
-# media: nothing is allowed through, not even small ones
-*.mp4
 *.mov
 *.webm
-*.mp3
 *.mkv
-memes/files/
 # our own synthesised sounds are the only audio we ship
 !sounds/*.wav
+# meme library ships in clipper/fx/memes (private repo; cache is rebuilt by memes.py build)
+clipper/fx/memes/cache/

@@ -15,8 +15,7 @@ Plus a set of Claude Code skills that drive the workflow (scoring, shot planning
 | `clipper/` | The clip tool (`autoclip.py` live clipper, `export_clips.py`, `rerender.py`, ...) + guides (`CLIPPING_GUIDE.md`, `VIRAL_LESSONS.md`, `NUDITY_OPTIONS.md`, `ACCEPTANCE.md`). `clipper/extra/` has the helper scripts: `top.py` (Twitch top-clips list), `render1.py`, `cover.py`, `make_cover.py`, `pack.py`, `blur_spans.py`, `burn_hook.py`. |
 | `shorts/` | The narrated-shorts pipeline: Remotion code (`src/`), build scripts (`tools/scripts/`), `SOUND-RULES.md`, and example scripts/scenarios in `videos/*/` (`FISH-SCRIPT.txt`, `SCENARIO.md`). |
 | `sounds/` | Our own synthesised sound effects (claim-free) + `LICENSES.md`. |
-| `memes/` | Catalog + names only. The meme files are NOT included (see below). |
-| `SCRUB-LOG.md` | Every secret/personal value that was removed from the copied files. |
+| `clipper/fx/` | The full meme library: `memes/` has 218 meme sounds (`snd_*.mp3`) and 54 meme overlays (`ovl_*.mp4`) with `catalog.json` (moods, trims) and `MEME_LIST.md`; plus emoji pngs and hit sounds. Run `python clipper\memes.py build` once to rebuild `fx/memes/cache/` (levelled/keyed copies). |
 
 ## Setup
 
@@ -78,7 +77,7 @@ Read `clipper/CLIPPING_GUIDE.md` and `clipper/VIRAL_LESSONS.md` first.
 - **Fish Audio voice**: the narration uses Fish Audio TTS. You need your own account (fish.audio) and your own API key/voice; nothing of ours is included. Any other TTS works if you save a wav and run `voice.py`.
 - **Gameplay/source footage**: not included. `shorts/tools/scripts/assemble.py` still has two hardcoded example paths (`Downloads\GTA 6\...`, `autoclipper\clips_crowd\...`, around lines 358-383); change them to your own files.
 - **Fonts**: the Remotion code expects `shorts/public/fonts/Montserrat-BlackItalic.ttf` (SIL OFL, free from Google Fonts); not copied here.
-- **Memes**: `memes/MEME_LIST.md` lists names and expected filenames. `catalog.json` has no source URLs, so no downloader is possible; find the files on myinstants.com / archive.org yourself, and only for narrated shorts. They are other people's content; check the licence before you publish.
+- **Memes**: included in `clipper/fx/memes/` (from myinstants.com / archive.org). They are Rockstar's and other creators' content, so a video using them can get a Content ID claim; keep this repo private and don't re-share the files. `sounds/` is the claim-free fallback.
 - **Env vars used by `clipper/extra/*.py`** (all optional, sensible defaults): `CLIP_WORK`, `CLIP_FRESH_DIR`, `CLIP_THUMBS_DIR`, `CLIP_READY_EN`, `CLIP_READY_RU`, `CLIP_UPLOAD_DIR`, `CLIP_READY_LOG`, `CLIP_NOTES_DIR`. Other: `WHISPER_PY` (watch-video), `ATLAS_API_KEY` (motion-reel Atlas script, optional paid service).
 
 Some guides still read "his"/"Damir" - they were written by the original owner for himself; read them as examples.
