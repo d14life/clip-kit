@@ -31,7 +31,7 @@ What each one gives and its known limits:
   views re-fetched for date, ranked by views/day. `--comments K` adds the 10 most-liked comments of
   the best K videos; comments are where viewers say what surprised them and what they still want.
   yt-dlp 2026.08 dropped the `ytsearchdate50:` prefix, so the script uses the results URL with the same sort.
-- **Reddit** (`reddit_arctic.py`): reddit.com may be blocked on your network; if so, do not route around that
+- **Reddit** (`reddit_arctic.py`): reddit.com is blocked from this PC; do not route around that
   (no proxies, mirrors, old.reddit, or browser). Arctic Shift archives each post at ingest, so `score` is
   ~1 and the newest posts show ~0 comments: rank by `num_comments`, and trust it more on posts 1+ day old.
   Big subs post >1000/day at launch; the script reports how far back it really got and warns when `--max` cut the window.
@@ -43,8 +43,8 @@ What each one gives and its known limits:
 ## 2. X, TikTok, Instagram: Claude in Chrome, read-only
 
 No free API exists. Use Claude in Chrome (read the `anthropic-skills:chrome-browser` skill first; load
-the tools in one ToolSearch call). Rules, because these are the user's real logged-in accounts:
-- Open **your own new tab**; never touch or close the user's tabs.
+the tools in one ToolSearch call). Rules, because these are the owner's real logged-in accounts:
+- Open **your own new tab**; never touch or close the owner's tabs.
 - Read only: no likes, follows, replies, reposts, DMs, or saves.
 - Never log in, log out, switch accounts, or type a password. If a page wants a login, a CAPTCHA, a
   cookie choice beyond "reject non-essential", or any dialog: stop that platform and report it.
@@ -75,7 +75,16 @@ idea with three proofs, and cross-platform proof is the strongest signal there i
 | Novelty | big views but few of the top 50 results cover it | the top 10 results already all do it |
 | Open-loop potential | a clear "how/where/what happens" question that the last seconds answer | nothing to wait for |
 
-Total out of 25, sort, keep 10. Also use the comments and Reddit threads as a source of their own: an
+**Overhyped gate (apply before scoring):** search the idea itself on YouTube (`yt_search.py "<idea>"`).
+If 5+ different creators already have a video on it over 100k views, it is saturated: drop it to
+"Rejected (overhyped)" unless we have a clearly new angle, and write that angle down. Big compilations
+("50 secrets in GTA 6") count as covering every item in them.
+
+**Niche bonus (+3):** proven demand with little supply. That means a small creator (under 50k
+followers) got 10x their usual views on it, or a Reddit/YouTube question asked by many people that
+no video over 100k answers yet. Prefer these over the mega-viral topics everyone is already copying.
+
+Total out of 28, sort, keep 10, and aim for at least 6 of the 10 being niche-bonus ideas. Also use the comments and Reddit threads as a source of their own: an
 argument with hundreds of replies, or a question many people ask ("how do you get the X?"), is an idea even before anyone made the video.
 
 Reject and list under "Rejected": ideas with no proof URL, ideas whose only evidence is AI footage,
