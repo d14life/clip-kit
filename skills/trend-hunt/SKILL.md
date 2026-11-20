@@ -75,10 +75,17 @@ idea with three proofs, and cross-platform proof is the strongest signal there i
 | Novelty | big views but few of the top 50 results cover it | the top 10 results already all do it |
 | Open-loop potential | a clear "how/where/what happens" question that the last seconds answer | nothing to wait for |
 
-**Overhyped gate (apply before scoring):** search the idea itself on YouTube (`yt_search.py "<idea>"`).
-If 5+ different creators already have a video on it over 100k views, it is saturated: drop it to
-"Rejected (overhyped)" unless we have a clearly new angle, and write that angle down. Big compilations
-("50 secrets in GTA 6") count as covering every item in them.
+**Overhyped gate (apply before scoring), per platform:** search the idea itself on YouTube
+(`yt_search.py "<idea>"`), TikTok, Instagram and X. On each platform, if 5+ different creators
+already have a video on it over 200k views, the idea is saturated THERE. Saturated on every platform
+means "Rejected (overhyped)", unless we have a clearly new angle, and you write that angle down. Big
+compilations ("50 secrets in GTA 6") count as covering every item in them.
+
+**Platform gap (strongest signal):** an idea that went viral on one platform (200k+) but has no
+200k+ version on another is a top pick for that other platform. For each gap, check whether the
+original creator already posted it there (look at their profile on that platform). Record it as:
+"viral on X (2.7M, @handle) / TikTok: missing / YT Shorts: creator's own copy 40k / IG: missing".
+Name the target platform(s) in the idea row.
 
 **Niche bonus (+3):** proven demand with little supply. That means a small creator (under 50k
 followers) got 10x their usual views on it, or a Reddit/YouTube question asked by many people that
