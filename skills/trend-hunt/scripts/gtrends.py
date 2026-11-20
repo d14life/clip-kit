@@ -6,10 +6,12 @@ Usage:
 --gprop youtube = YouTube search interest (closest to what shorts viewers type). web = Google web search.
 "Breakout" in rising means growth > 5000%.
 pytrends is archived upstream; if it keeps failing, trendspyg (MIT, maintained) has a
-drop-in `from trendspyg.compat.request import TrendReq`. Not installed here: vet before use.
+drop-in `from trendspyg.compat.request import TrendReq`. Not installed by default: vet before use.
 """
 import argparse, json, sys, time
 from datetime import datetime, timezone
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace"); sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 def main():
     ap = argparse.ArgumentParser()

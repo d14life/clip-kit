@@ -1,7 +1,7 @@
 """YouTube: newest uploads for a query, ranked by views per day. Optional top comments.
 
 Usage:
-  python yt_search.py "GTA 6 money glitch" ["GTA 6 secret" ...] [--n 50] [--top 15] [--comments 5] [--out file.json]
+  python yt_search.py "GTA 6 money glitch" ["GTA 6 secret" ...] [--n 50] [--top 15 per query] [--days 7] [--comments 5] [--out file.json]
 
 Uses `python -m yt_dlp` on the YouTube results URL sorted by upload date (newest first);
 older yt-dlp also accepted "ytsearchdateN:<q>", removed by 2026.08. Flat search gives views but no date,
@@ -10,6 +10,8 @@ so the top --top by raw views are re-fetched in full to get upload_date, then ra
 """
 import argparse, json, subprocess, sys, time, urllib.parse
 from datetime import datetime, timezone
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace"); sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 def ytdlp(args, timeout=300):
     r = subprocess.run([sys.executable, "-m", "yt_dlp", "--no-warnings", "-J", *args],
@@ -24,16 +26,30 @@ def views_per_day(views, upload_date):
     age = (datetime.now(timezone.utc) - datetime.strptime(upload_date, "%Y%m%d").replace(tzinfo=timezone.utc)).days
     return views / max(age, 1)  # same-day uploads count as one day
 
+def enrich(r):
+    try:
+        full = ytdlp(["--skip-download", r["url"]], timeout=120)
+        r.update(upload_date=full.get("upload_date"), views=full.get("view_count") or r["views"],
+                 likes=full.get("like_count"), comment_count=full.get("comment_count"),
+                 is_short=(full.get("duration") or 999) <= 180)
+    except Exception as e:
+        r["error"] = str(e)
+    ud = r.get("upload_date")
+    r["age_days"] = (datetime.now(timezone.utc) - datetime.strptime(ud, "%Y%m%d").replace(tzinfo=timezone.utc)).days if ud else None
+    r["views_per_day"] = round(views_per_day(r["views"], ud))
+    time.sleep(1)  # be polite; YouTube rate-limits bursts
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("queries", nargs="+")
     ap.add_argument("--n", type=int, default=50)
-    ap.add_argument("--top", type=int, default=15)
+    ap.add_argument("--top", type=int, default=15, help="videos kept per query")
+    ap.add_argument("--days", type=float, default=7, help="drop videos older than N days when upload date is known (0 = off)")
     ap.add_argument("--comments", type=int, default=0)
     ap.add_argument("--out")
     a = ap.parse_args()
 
-    seen, rows = set(), []
+    seen, rows, top = set(), [], []
     for q in a.queries:
         try:
             # yt-dlp 2026.08 dropped the "ytsearchdateN:" prefix ("Unsupported url scheme");
@@ -50,19 +66,10 @@ def main():
                              "views": e.get("view_count") or 0, "duration": e.get("duration"), "query": q,
                              "url": f"https://www.youtube.com/watch?v={e['id']}"})
         print(f"[yt] {q!r}: {got} new videos", file=sys.stderr)
-
-    rows.sort(key=lambda r: r["views"], reverse=True)
-    top = rows[:a.top]
-    for r in top:
-        try:
-            full = ytdlp(["--skip-download", r["url"]], timeout=120)
-            r.update(upload_date=full.get("upload_date"), views=full.get("view_count") or r["views"],
-                     likes=full.get("like_count"), comment_count=full.get("comment_count"),
-                     is_short=(full.get("duration") or 999) <= 180)
-        except Exception as e:
-            r["error"] = str(e)
-        r["views_per_day"] = round(views_per_day(r["views"], r.get("upload_date")))
-        time.sleep(1)  # be polite; YouTube rate-limits bursts
+        qrows = sorted((r for r in rows if r["query"] == q), key=lambda r: r["views"], reverse=True)[:a.top]
+        for r in qrows:
+            enrich(r)
+        top += [r for r in qrows if not (a.days and r.get("upload_date") and r["age_days"] > a.days)]
     top.sort(key=lambda r: r["views_per_day"], reverse=True)
 
     for r in top[:a.comments]:
