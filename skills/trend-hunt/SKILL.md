@@ -31,7 +31,7 @@ What each one gives and its known limits:
   views re-fetched for date, ranked by views/day. `--comments K` adds the 10 most-liked comments of
   the best K videos; comments are where viewers say what surprised them and what they still want.
   yt-dlp 2026.08 dropped the `ytsearchdate50:` prefix, so the script uses the results URL with the same sort.
-- **Reddit** (`reddit_arctic.py`): reddit.com is blocked from this PC; do not route around that
+- **Reddit** (`reddit_arctic.py`): reddit.com may be blocked on your network; if so, do not route around that
   (no proxies, mirrors, old.reddit, or browser). Arctic Shift archives each post at ingest, so `score` is
   ~1 and the newest posts show ~0 comments: rank by `num_comments`, and trust it more on posts 1+ day old.
   Big subs post >1000/day at launch; the script reports how far back it really got and warns when `--max` cut the window.
@@ -43,8 +43,8 @@ What each one gives and its known limits:
 ## 2. X, TikTok, Instagram: Claude in Chrome, read-only
 
 No free API exists. Use Claude in Chrome (read the `anthropic-skills:chrome-browser` skill first; load
-the tools in one ToolSearch call). Rules, because these are the owner's real logged-in accounts:
-- Open **your own new tab**; never touch or close the owner's tabs.
+the tools in one ToolSearch call). Rules, because these are the user's real logged-in accounts:
+- Open **your own new tab**; never touch or close the user's tabs.
 - Read only: no likes, follows, replies, reposts, DMs, or saves.
 - Never log in, log out, switch accounts, or type a password. If a page wants a login, a CAPTCHA, a
   cookie choice beyond "reject non-essential", or any dialog: stop that platform and report it.
